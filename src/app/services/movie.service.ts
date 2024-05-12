@@ -22,20 +22,20 @@ export interface MovieResponse {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MovieService {
   private http = inject(HttpClient);
   private url = 'https://imdb-top-100-movies.p.rapidapi.com/';
 
-  constructor() { }
+  constructor() {}
 
   getMovie(id?: String) {
     return this.http.get<MovieResponse>(this.url + id, {
       headers: {
         'X-RapidAPI-key': '4b21553d2bmshfc4a8a3ba4af531p125038jsn902a8afb4267',
-        'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com'
-      }
+        'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com',
+      },
     });
   }
 
@@ -43,8 +43,8 @@ export class MovieService {
     return this.http.get<MovieResponse[]>(this.url, {
       headers: {
         'X-RapidAPI-key': '4b21553d2bmshfc4a8a3ba4af531p125038jsn902a8afb4267',
-        'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com'
-      }
+        'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com',
+      },
     });
   }
 }

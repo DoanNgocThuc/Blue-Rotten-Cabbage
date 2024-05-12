@@ -51,4 +51,10 @@ export class HomeComponent {
   goToMovie(id: string) {
     this.router.navigate(['/movie', id]);
   }
+
+  // getMovieByTitle(title: string) {
+  //   this.movieService.getMovieByTitle(title).subscribe((data) => {
+  //     this.moviesList = data;
+  //   });
+  // }
 }

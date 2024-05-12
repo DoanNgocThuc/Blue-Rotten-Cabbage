@@ -1,9 +1,21 @@
 <app-header></app-header>
-<div class="home-container w-100 h-auto">
+<div class="home-container w-100 h-auto d-flex flex-column">
+  <div class="d-flex justify-content-center my-3">
+    <mat-form-field class="w-50">
+      <mat-label>Search movies</mat-label>
+      <input matInput />
+    </mat-form-field>
+  </div>
+
+  <div>
     <div *ngFor="let movie of moviesList" class="d-inline-flex">
-        <div (click)="goToMovie(movie.id)" class="movie-container d-flex flex-column justify-content-center align-items-center">
-            <img src="{{movie.image}}" class="w-75 h-75 rounded">
-            <h3 class="fw-bold my-3">{{movie.title}}</h3>
-        </div>
+      <div
+        (click)="goToMovie(movie.id)"
+        class="movie-container d-flex flex-column justify-content-center align-items-center"
+      >
+        <img src="{{ movie.image }}" class="w-75 h-75 rounded" />
+        <h3 class="fw-bold my-3">{{ movie.title }}</h3>
+      </div>
     </div>
+  </div>
 </div>
